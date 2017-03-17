@@ -27,7 +27,7 @@ namespace LeetCode58_LengthOfLastWord
     {
         public int LengthOfLastWord(string s)
         {
-            return s.Length;
+            return s.TrimEnd().Length;
         }
     }
 }

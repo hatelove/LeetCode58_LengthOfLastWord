@@ -15,6 +15,12 @@ namespace LeetCode58_LengthOfLastWord
         {
             Assert.AreEqual(expected, new Solution().LengthOfLastWord(s));
         }
+
+        [TestMethod]
+        public void s_is_bc_and_3_spaces_should_return_2()
+        {
+            LastWordLengthShouldBe("bc   ", 2);
+        }
     }
 
     public class Solution

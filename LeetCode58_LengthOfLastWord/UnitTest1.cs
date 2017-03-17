@@ -40,22 +40,26 @@ namespace LeetCode58_LengthOfLastWord
         public int LengthOfLastWord(string s)
         {
             var isEndSpaceClear = false;
-            var endFlag = s.Length - 1;
+            var endCharIndex = s.Length - 1;
             for (int i = s.Length - 1; i >= 0; i--)
             {
-                if (s[i] != ' ' && !isEndSpaceClear)
+                if (!isEndSpaceClear && !IsSpace(s[i]))
                 {
                     isEndSpaceClear = true;
-                    endFlag = i;
+                    endCharIndex = i;
                 }
-
-                if (isEndSpaceClear && s[i] == ' ')
+                else if (isEndSpaceClear && IsSpace(s[i]))
                 {
-                    return endFlag - i;
+                    return endCharIndex - i;
                 }
             }
 
-            return isEndSpaceClear ? endFlag + 1 : 0;
+            return isEndSpaceClear ? endCharIndex + 1 : 0;
+        }
+
+        private static bool IsSpace(char @char)
+        {
+            return @char == ' ';
         }
     }
 }

@@ -39,16 +39,23 @@ namespace LeetCode58_LengthOfLastWord
     {
         public int LengthOfLastWord(string s)
         {
-            var clearS = s.TrimEnd();
-            for (int i = clearS.Length - 1; i >= 0; i--)
+            var isEndSpaceClear = false;
+            var endFlag = s.Length - 1;
+            for (int i = s.Length - 1; i >= 0; i--)
             {
-                if (clearS[i] == ' ')
+                if (s[i] != ' ' && !isEndSpaceClear)
                 {
-                    return clearS.Length - 1 - i;
+                    isEndSpaceClear = true;
+                    endFlag = i;
+                }
+
+                if (isEndSpaceClear && s[i] == ' ')
+                {
+                    return endFlag - i;
                 }
             }
 
-            return clearS.Length;
+            return isEndSpaceClear ? endFlag + 1 : 0;
         }
     }
 }

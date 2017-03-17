@@ -18,7 +18,7 @@ namespace LeetCode58_LengthOfLastWord
     {
         public int LengthOfLastWord(string s)
         {
-            throw new NotImplementedException();
+            return s.Length;
         }
     }
 }

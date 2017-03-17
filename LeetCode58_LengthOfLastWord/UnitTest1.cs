@@ -27,6 +27,12 @@ namespace LeetCode58_LengthOfLastWord
         {
             LastWordLengthShouldBe("bc xyz", 3);
         }
+
+        [TestMethod]
+        public void s_is_space_a_should_return_1()
+        {
+            LastWordLengthShouldBe(" a", 1);
+        }
     }
 
     public class Solution

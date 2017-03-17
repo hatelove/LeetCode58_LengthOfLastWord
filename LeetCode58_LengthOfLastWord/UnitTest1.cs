@@ -1,5 +1,4 @@
-﻿using System;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace LeetCode58_LengthOfLastWord
 {
@@ -9,8 +8,12 @@ namespace LeetCode58_LengthOfLastWord
         [TestMethod]
         public void s_is_bc_should_return_2()
         {
-            var s = "bc";
-            Assert.AreEqual(2, new Solution().LengthOfLastWord(s));
+            LastWordLengthShouldBe("bc", 2);
+        }
+
+        private static void LastWordLengthShouldBe(string s, int expected)
+        {
+            Assert.AreEqual(expected, new Solution().LengthOfLastWord(s));
         }
     }
 

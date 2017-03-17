@@ -40,7 +40,7 @@ namespace LeetCode58_LengthOfLastWord
         public int LengthOfLastWord(string s)
         {
             var clearS = s.TrimEnd();
-            for (int i = clearS.Length - 1; i > 0; i--)
+            for (int i = clearS.Length - 1; i >= 0; i--)
             {
                 if (clearS[i] == ' ')
                 {
